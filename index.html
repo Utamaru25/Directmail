@@ -8,15 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
-<!-- GA4 (uncomment and set your measurement ID)
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5W5196K9JV"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
+gtag('config', 'G-5W5196K9JV');
 </script>
--->
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -446,7 +445,7 @@ async function init() {
   loading.style.display = 'none';
   main.style.display = 'block';
 
-  trackEvent('page_view', { customer_id: customerId || 'unknown' });
+  trackEvent('lp_view');
 
   // Show dev button on localhost
   if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
@@ -463,7 +462,7 @@ if (player) {
     player.volume = 1.0;
   });
   player.addEventListener('play', function() {
-    trackEvent('video_play');
+    trackEvent('video_start');
   });
   player.addEventListener('ended', function() {
     trackEvent('video_complete');
@@ -488,7 +487,7 @@ function showCTA() {
 let timerexLoaded = false;
 
 function openTimeRex() {
-  trackEvent('cta_consult');
+  trackEvent('cta_consultation');
   const wrapper = document.getElementById('timerex-wrapper');
 
   if (!timerexLoaded) {
@@ -512,6 +511,7 @@ function openTimeRex() {
     document.body.appendChild(script);
 
     timerexLoaded = true;
+    trackEvent('timerex_open');
   } else {
     wrapper.style.display = wrapper.style.display === 'none' ? 'block' : 'none';
   }
@@ -522,13 +522,12 @@ function openTimeRex() {
 }
 
 // ──────────────────────────────────────
-// Analytics (GA4 stub — replace with real tracking)
+// Analytics (GA4: G-5W5196K9JV)
 // ──────────────────────────────────────
 function trackEvent(eventName, eventParams) {
   const p = Object.assign({ customer_id: customerId || 'unknown' }, eventParams || {});
   console.log('[Track]', eventName, p);
-  // Uncomment when GA4 is configured:
-  // if (typeof gtag === 'function') { gtag('event', eventName, p); }
+  if (typeof gtag === 'function') { gtag('event', eventName, p); }
 }
 
 // ──────────────────────────────────────
