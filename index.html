@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>限定動画のご案内｜中小企業退職金制度 改定・移行支援事務局</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- GA4 (uncomment and set your measurement ID)
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #C5A55A;
+  --gold-light: #E8D5A3;
+  --gold-dark: #A8893E;
+  --navy: #1B2A4A;
+  --navy-dark: #0F1B33;
+  --navy-light: #2A3F6A;
+  --white: #FFFFFF;
+  --cream: #FAF6EE;
+  --text: #333333;
+  --text-light: #666666;
+}
+
+body {
+  font-family: 'Noto Sans JP', '游ゴシック', 'Yu Gothic', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ── Header ── */
+.header {
+  background: var(--navy-dark);
+  padding: 12px 20px;
+  text-align: center;
+}
+.header__label {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 2px;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.header__org {
+  color: var(--gold-light);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.header__gold-line {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+}
+
+/* ── Personalization ── */
+.personalize {
+  background: var(--white);
+  margin: 24px 16px;
+  padding: 28px 24px;
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
+  border: 1px solid var(--gold-light);
+}
+.personalize::before,
+.personalize::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--gold);
+  border-style: solid;
+}
+.personalize::before {
+  top: 8px; left: 8px;
+  border-width: 2px 0 0 2px;
+}
+.personalize::after {
+  bottom: 8px; right: 8px;
+  border-width: 0 2px 2px 0;
+}
+.personalize__notice {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+.personalize__company {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.personalize__sub {
+  font-size: 14px;
+  color: var(--gold-dark);
+  font-weight: 500;
+}
+
+/* ── Headline ── */
+.headline {
+  background: var(--navy-dark);
+  padding: 28px 20px;
+  text-align: center;
+}
+.headline__main {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+.headline__bomb {
+  color: var(--gold);
+  font-size: 24px;
+}
+.headline__sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  margin-top: 12px;
+}
+
+/* ── Video ── */
+.video-section {
+  background: var(--navy-dark);
+  padding: 0 16px 20px;
+}
+.video-wrapper {
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+}
+.video-wrapper wistia-player {
+  display: block;
+  width: 100%;
+}
+.video-note {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 10px;
+}
+
+/* ── CTA ── */
+.cta-section {
+  padding: 32px 16px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+.cta-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.cta__heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.cta__note {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 18px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  margin-bottom: 16px;
+  border: none;
+  font-family: inherit;
+  text-align: center;
+}
+.btn:active { transform: scale(0.98); }
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--navy-dark);
+  box-shadow: 0 4px 12px rgba(197,165,90,0.35);
+}
+.btn--primary:hover {
+  box-shadow: 0 6px 20px rgba(197,165,90,0.45);
+}
+.btn--secondary {
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--gold);
+}
+.btn--secondary:hover {
+  background: var(--cream);
+}
+
+.btn__label-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+.btn--primary .btn__label-tag {
+  background: var(--navy-dark);
+  color: var(--gold);
+}
+.btn--secondary .btn__label-tag {
+  background: var(--gold);
+  color: var(--navy-dark);
+}
+.btn__title {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 4px 0;
+}
+.btn__desc {
+  font-size: 11px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* ── TimeRex ── */
+#timerex-wrapper > div {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#timerex-calendar-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+#timerex_calendar {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden;
+}
+#timerex_calendar iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.footer__org {
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* ── Loading ── */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-light);
+}
+.loading__spinner {
+  width: 32px; height: 32px;
+  border: 3px solid var(--gold-light);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Debug CTA (dev only, remove for prod) ── */
+.dev-show-cta {
+  position: fixed; bottom: 10px; right: 10px;
+  background: #c00; color: #fff;
+  border: none; padding: 6px 12px; font-size: 11px;
+  border-radius: 4px; cursor: pointer; z-index: 999;
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__label">限定公開</div>
+    <div class="header__org">中小企業退職金制度 改定・移行支援事務局</div>
+  </header>
+  <div class="header__gold-line"></div>
+
+  <!-- Loading -->
+  <div class="loading" id="loading">
+    <div class="loading__spinner"></div>
+    読み込み中...
+  </div>
+
+  <!-- Main content (hidden until data loaded) -->
+  <main id="mainContent" style="display:none;">
+
+    <!-- Personalization -->
+    <section class="personalize" id="personalizeBlock">
+      <p class="personalize__notice">このページは、DMを受け取られた方だけの限定公開です</p>
+      <p class="personalize__company" id="companyName">経営者 様</p>
+      <p class="personalize__sub">専用の限定動画をご用意しました</p>
+    </section>
+
+    <!-- Headline -->
+    <section class="headline">
+      <h1 class="headline__main">
+        御社の退職金制度に、<br>
+        <span class="headline__bomb">"時限爆弾"</span>が<br>隠れていませんか？
+      </h1>
+      <p class="headline__sub">
+        99%の経営者が気づいていない、中退共の構造的リスク。<br>
+        インターネットやYouTubeでは出てこない<br>
+        「インフレ対応の不都合な真実」を10分で解説します。
+      </p>
+    </section>
+
+    <!-- Video -->
+    <section class="video-section">
+      <div class="video-wrapper" id="videoWrapper">
+        <script src="https://fast.wistia.com/player.js" async></script>
+        <script src="https://fast.wistia.com/embed/rlj2gyn10u.js" async type="module"></script>
+        <wistia-player media-id="rlj2gyn10u" aspect="1.7777777777777777" volume="1"></wistia-player>
+      </div>
+      <p class="video-note">※音声が含まれます。音量にご注意ください</p>
+    </section>
+
+    <!-- CTA (hidden until video ends) -->
+    <section class="cta-section" id="ctaSection">
+      <h2 class="cta__heading">まずは、どちらからスタートしますか？</h2>
+      <p class="cta__note">無理な勧誘やご連絡は一切ございません</p>
+
+      <a href="https://utage-system.com/page/OnmCtoHJX8dP" target="_blank" rel="noopener"
+         class="btn btn--primary" id="btnSeminar" onclick="trackEvent('cta_seminar')">
+        <span class="btn__label-tag">特別無料</span>
+        <div class="btn__title">Webセミナーに参加する</div>
+        <div class="btn__desc">
+          代表税理士の馬醫が登壇する1時間の無料Webセミナーで、<br>
+          本日の内容をさらに詳しくお伝えします
+        </div>
+      </a>
+
+      <button class="btn btn--secondary" id="btnConsult" onclick="openTimeRex()">
+        <span class="btn__label-tag">1to1</span>
+        <div class="btn__title">個別診断を申し込む</div>
+        <div class="btn__desc">
+          退職金制度分析の専門家による30分のWeb個別面談で、<br>
+          御社の退職金制度を診断します
+        </div>
+      </button>
+    </section>
+
+    <!-- TimeRex Calendar -->
+    <div id="timerex-wrapper" style="display:none; margin-top:16px;">
+      <div style="background:var(--cream); border-radius:10px; padding:20px 16px; border:1px solid rgba(232,213,163,0.6);">
+        <p style="font-size:16px; font-weight:700; color:var(--navy); text-align:center; margin:0 0 4px;">ご希望の日時をお選びください</p>
+        <p style="font-size:12px; color:var(--navy-light); text-align:center; margin:0 0 16px;">30分のWeb個別面談（Zoom）</p>
+        <div id="timerex-calendar-container"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__org">中小企業退職金制度 改定・移行支援事務局</div>
+    運営：NOBASE株式会社<br>
+    〒107-0061 東京都港区北青山1-3-3 三橋ビル3階<br>
+    お問い合わせ：050-1726-7724
+  </footer>
+
+</div>
+
+<!-- Dev: show CTA button for testing -->
+<button class="dev-show-cta" id="devBtn" onclick="showCTA()">DEV: Show CTA</button>
+
+<script>
+// ──────────────────────────────────────
+// Config
+// ──────────────────────────────────────
+const WISTIA_ID = 'rlj2gyn10u';
+const TIMEREX_URL = 'https://timerex.net/s/paradox8824_f650/6625a58b';
+
+// ──────────────────────────────────────
+// URL params & personalization
+// ──────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const customerId = params.get('id');
+
+async function init() {
+  const loading = document.getElementById('loading');
+  const main = document.getElementById('mainContent');
+
+  // Load customer data
+  if (customerId) {
+    try {
+      const resp = await fetch('customers.json');
+      if (resp.ok) {
+        const data = await resp.json();
+        const customer = data[customerId];
+        if (customer && customer.company) {
+          document.getElementById('companyName').textContent = customer.company + ' 様';
+        }
+      }
+    } catch (e) {
+      console.log('customers.json not found, using fallback');
+    }
+  }
+
+  loading.style.display = 'none';
+  main.style.display = 'block';
+
+  trackEvent('page_view', { customer_id: customerId || 'unknown' });
+
+  // Show dev button on localhost
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+    document.getElementById('devBtn').style.display = 'block';
+  }
+}
+
+// ──────────────────────────────────────
+// Wistia Player API (Web Component形式)
+// ──────────────────────────────────────
+const player = document.querySelector('wistia-player');
+if (player) {
+  player.addEventListener('loadeddata', function() {
+    player.volume = 1.0;
+  });
+  player.addEventListener('play', function() {
+    trackEvent('video_play');
+  });
+  player.addEventListener('ended', function() {
+    trackEvent('video_complete');
+    showCTA();
+  });
+}
+
+// ──────────────────────────────────────
+// CTA display
+// ──────────────────────────────────────
+function showCTA() {
+  const section = document.getElementById('ctaSection');
+  section.classList.add('is-visible');
+  setTimeout(function() {
+    section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 300);
+}
+
+// ──────────────────────────────────────
+// TimeRex
+// ──────────────────────────────────────
+let timerexLoaded = false;
+
+function openTimeRex() {
+  trackEvent('cta_consult');
+  const wrapper = document.getElementById('timerex-wrapper');
+
+  if (!timerexLoaded) {
+    // 1. display:block にして表示
+    wrapper.style.display = 'block';
+
+    // 2. カレンダーdivを作成（id と data-url が必須）
+    const container = document.getElementById('timerex-calendar-container');
+    const calDiv = document.createElement('div');
+    calDiv.id = 'timerex_calendar';
+    calDiv.setAttribute('data-url', 'https://timerex.net/s/paradox8824_f650/6625a58b');
+    container.appendChild(calDiv);
+
+    // 3. embed.js を読み込み、完了後に TimerexCalendar() で初期化
+    const script = document.createElement('script');
+    script.src = 'https://asset.timerex.net/js/embed.js';
+    script.id = 'timerex_embed';
+    script.onload = function() {
+      TimerexCalendar();
+    };
+    document.body.appendChild(script);
+
+    timerexLoaded = true;
+  } else {
+    wrapper.style.display = wrapper.style.display === 'none' ? 'block' : 'none';
+  }
+
+  setTimeout(function() {
+    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+}
+
+// ──────────────────────────────────────
+// Analytics (GA4 stub — replace with real tracking)
+// ──────────────────────────────────────
+function trackEvent(eventName, eventParams) {
+  const p = Object.assign({ customer_id: customerId || 'unknown' }, eventParams || {});
+  console.log('[Track]', eventName, p);
+  // Uncomment when GA4 is configured:
+  // if (typeof gtag === 'function') { gtag('event', eventName, p); }
+}
+
+// ──────────────────────────────────────
+// Init
+// ──────────────────────────────────────
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
