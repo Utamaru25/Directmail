@@ -528,7 +528,7 @@ function openTimeRex() {
 // Analytics (GA4: G-5W5196K9JV)
 // ──────────────────────────────────────
 function trackEvent(eventName, eventParams) {
-  const p = Object.assign({ customer_id: customerId || 'unknown' }, eventParams || {});
+  const p = Object.assign({ dm_customer_id: customerId || 'unknown' }, eventParams || {});
   console.log('[Track]', eventName, p);
   if (typeof gtag === 'function') { gtag('event', eventName, p); }
 }
