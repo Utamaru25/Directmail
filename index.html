@@ -424,25 +424,15 @@ const TIMEREX_URL = 'https://timerex.net/s/paradox8824_f650/6625a58b';
 // ──────────────────────────────────────
 const params = new URLSearchParams(window.location.search);
 const customerId = params.get('id');
+const companyName = params.get('cn') ? decodeURIComponent(params.get('cn')) : '';
 
 async function init() {
   const loading = document.getElementById('loading');
   const main = document.getElementById('mainContent');
 
-  // Load customer data
-  if (customerId) {
-    try {
-      const resp = await fetch('customers.json');
-      if (resp.ok) {
-        const data = await resp.json();
-        const customer = data[customerId];
-        if (customer && customer.company) {
-          document.getElementById('companyName').textContent = customer.company + ' 様';
-        }
-      }
-    } catch (e) {
-      console.log('customers.json not found, using fallback');
-    }
+  // Display company name from URL parameter
+  if (companyName) {
+    document.getElementById('companyName').textContent = companyName + ' 様';
   }
 
   loading.style.display = 'none';
