@@ -465,6 +465,29 @@ if (player) {
     trackEvent('video_complete');
     showCTA();
   });
+
+  // 進捗マイルストーン（25/50/75%）
+  const milestonesSent = { p25: false, p50: false, p75: false };
+  player.addEventListener('timeupdate', function() {
+    const duration = player.duration;
+    const currentTime = player.currentTime;
+    if (!duration || duration === 0) return;
+
+    const percent = (currentTime / duration) * 100;
+
+    if (percent >= 25 && !milestonesSent.p25) {
+      trackEvent('video_progress_25');
+      milestonesSent.p25 = true;
+    }
+    if (percent >= 50 && !milestonesSent.p50) {
+      trackEvent('video_progress_50');
+      milestonesSent.p50 = true;
+    }
+    if (percent >= 75 && !milestonesSent.p75) {
+      trackEvent('video_progress_75');
+      milestonesSent.p75 = true;
+    }
+  });
 }
 
 // ──────────────────────────────────────
