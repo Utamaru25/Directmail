@@ -459,6 +459,7 @@ if (player) {
   });
   player.addEventListener('play', function() {
     trackEvent('video_start');
+    showCTA();
   });
   player.addEventListener('ended', function() {
     trackEvent('video_complete');
