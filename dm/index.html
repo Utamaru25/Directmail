@@ -459,18 +459,23 @@ if (player) {
   });
   player.addEventListener('play', function() {
     trackEvent('video_start');
-    showCTA();
   });
   player.addEventListener('ended', function() {
     trackEvent('video_complete');
     showCTA();
   });
 
-  // 進捗マイルストーン（25/50/75%）
+  // 30秒視聴でCTA表示 + 進捗マイルストーン（25/50/75%）
   const milestonesSent = { p25: false, p50: false, p75: false };
   player.addEventListener('timeupdate', function() {
     const duration = player.duration;
     const currentTime = player.currentTime;
+
+    // 30秒視聴でCTA表示（duration未取得でも動作）
+    if (currentTime >= 30) {
+      showCTA();
+    }
+
     if (!duration || duration === 0) return;
 
     const percent = (currentTime / duration) * 100;
@@ -494,6 +499,8 @@ if (player) {
 // CTA display
 // ──────────────────────────────────────
 function showCTA() {
+  if (showCTA.alreadyShown) return;
+  showCTA.alreadyShown = true;
   const section = document.getElementById('ctaSection');
   section.classList.add('is-visible');
   setTimeout(function() {
